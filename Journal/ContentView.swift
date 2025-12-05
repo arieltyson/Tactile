@@ -10,10 +10,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Spacer()
+            
+            // Header
+            Text("Tactile")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
+            
+            Spacer()
+            
+            WaveformView()
+                .frame(height: 200)
+            
+            Spacer()
+            
+            // Footer Instruction
+            Text("Tap anywhere to record")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
         }
         .padding()
     }
@@ -21,4 +37,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(FeedbackService.shared)
 }
