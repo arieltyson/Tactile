@@ -37,5 +37,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(FeedbackService.shared)
+        .environment(FeedbackService.shared)
 }

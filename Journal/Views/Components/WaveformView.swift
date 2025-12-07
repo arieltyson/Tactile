@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct WaveformView: View {
-    // Dependency Injection: Grab the Feedback Service (brain)
-    @EnvironmentObject var feedbackService: FeedbackService
+    // Dependency Injection: Access the Feedback Service
+    @Environment(FeedbackService.self) private var feedbackService
     
     @State private var isRecording = false
     @State private var barHeights: [CGFloat] = Array(repeating: 20, count: 5)
@@ -28,14 +28,14 @@ struct WaveformView: View {
             toggleRecording()
         }
         
-        // Accessibility Configuration (The "Pro" Touch)
+        // Accessibility Configuration
         .accessibilityElement(children: .ignore) // Merge all bars into one button
         .accessibilityLabel(isRecording ? "Stop Recording" : "Start Recording")
         .accessibilityAddTraits(.isButton)
         .accessibilityHint("Double tap to toggle.")
     }
     
-    // The Logic Hob
+    // The Logic Hub
     private func toggleRecording() {
         isRecording.toggle()
         
@@ -56,5 +56,5 @@ struct WaveformView: View {
 
 #Preview {
     WaveformView()
-        .environmentObject(FeedbackService.shared)
+        .environment(FeedbackService.shared)
 }
