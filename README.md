@@ -7,6 +7,7 @@
 "Tactile is a proof of concept that accessibility is not an overlay; it is an architecture. By decoupling the user interface from the visual layer, this project demonstrates how `UIAccessibility` can function as the primary interaction model, creating a truly 'eyes-free' experience that is robust for VoiceOver users and intuitive for everyone else."
 
 ---
+</div>
 
 ## Features
 
@@ -16,7 +17,6 @@
 - **Privacy by Design:** All speech processing and logic occur on-device.
 
 ---
-</div>
 
 ## Technologies Used 💻
 
